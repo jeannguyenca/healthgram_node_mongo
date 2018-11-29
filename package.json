@@ -1,0 +1,54 @@
+{
+  "name": "healthgram",
+  "version": "1.0.2",
+  "engines": {
+    "node": "10.3.0"
+  },
+  "description": "A web application for travellers to prepare themselves for portential diseases and allergies in their destination.",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node backend/server.js",
+    "prestart2": "webpack --mode development",
+    "start:server": "webpack -d && cd backend && nodemon server.js --exec babel-node --presets stage-0",
+    "start:client": "cd client && npm start",
+    "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "heroku-postbuild": "webpack -d"
+  },
+  "author": "Red Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "mongo-client": "^0.2.1",
+    "mongodb": "^3.1.8",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.5",
+    "path": "^0.12.7",
+    "react-liquid-gauge": "^1.2.4",
+    "react-scripts": "2.0.5",
+    "request": "^2.88.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "express": "^4.16.3",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "keywords": [
+    "health",
+    "travel",
+    "disease",
+    "prevention"
+  ]
+}
